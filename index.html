@@ -7,24 +7,88 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="overlay" id="loginOverlay">
-  <div class="card">
+
+<!-- LOGIN -->
+<div id="login-overlay">
+  <div class="login-box">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg" class="logo">
     <h1>DarkX Official</h1>
     <p>Content: Ulayani</p>
-    <input type="text" id="username" placeholder="Weka jina lako">
+
+    <input type="text" id="username" placeholder="Weka username">
     <button onclick="loginUser()">INGIA</button>
+
+    <small id="usersCount">Users: 0</small>
   </div>
 </div>
+
+<!-- HEADER -->
 <header>
-<h1>DarkX Official</h1>
-<p id="usersCount">Users: 0</p>
+  <div class="brand">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Netflix_icon.svg">
+    <span>DarkX Official</span>
+  </div>
+
+  <div class="right">
+    <span id="welcomeUser"></span>
+    <button onclick="logoutUser()">Logout</button>
+  </div>
 </header>
+
+<!-- HERO -->
 <section class="hero">
-<h2>ULAYANI</h2>
-<p>Premium streaming style experience.</p>
+  <h2>ULAYANI</h2>
+  <p>Watch premium content instantly</p>
 </section>
+
+<!-- VIDEOS -->
 <div class="video-grid" id="videoGrid"></div>
+
+<script>
+async function loginUser(){
+ const username=document.getElementById("username").value.trim();
+ if(!username) return alert("Weka username");
+
+ localStorage.setItem("darkx_user", username);
+
+ await fetch("/login",{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({username})
+ });
+
+ hideLogin();
+ loadUsers();
+}
+
+function hideLogin(){
+ document.getElementById("login-overlay").style.display="none";
+ document.getElementById("welcomeUser").innerText =
+ "Hi, " + localStorage.getItem("darkx_user");
+}
+
+function logoutUser(){
+ localStorage.removeItem("darkx_user");
+ location.reload();
+}
+
+async function loadUsers(){
+ try{
+  let res = await fetch("/users");
+  let data = await res.json();
+  document.getElementById("usersCount").innerText = "Users: " + data.count;
+ }catch(e){}
+}
+
+window.onload = ()=>{
+ let user = localStorage.getItem("darkx_user");
+ if(user) hideLogin();
+ loadUsers();
+}
+</script>
+
+<!-- USIGUSE SCRIPT YAKO -->
 <script src="script.js"></script>
+
 </body>
-</html>
+  </html>
