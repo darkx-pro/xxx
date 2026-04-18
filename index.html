@@ -3,62 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DarkX Official | Video Stream</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DARKX OFFICIAL | STREAM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* DARKX CYBERPUNK STYLE */
+        :root {
+            --primary: #ff0000;
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #050505;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 5px;
+        }
+
+        .logo span {
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        /* GRID SYSTEM */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid #1a1a1a;
+            transition: 0.4s ease;
+        }
+
+        .video-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 0, 0, 0.1);
+        }
+
+        /* IFRAME FIX */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            background: #111;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-info h3 {
+            font-size: 16px;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            font-size: 11px;
+            color: var(--primary);
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status i {
+            margin-right: 5px;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: #444;
+            font-size: 12px;
+            border-top: 1px solid #111;
+            margin-top: 50px;
+        }
+
+        /* MOBILE FIX */
+        @media (max-width: 600px) {
+            .video-grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
+    <header>
         <div class="logo">DARK<span>X</span> OFFICIAL</div>
-    </nav>
+    </header>
 
-    <section class="hero">
-        <h2>LATEST UPLOADS</h2>
-        <p>Tazama video kali hapa kwetu.</p>
-    </section>
+    <div class="container">
+        <h2 class="section-title"><i class="fa fa-fire"></i> LATEST UPLOADS</h2>
 
-    <main class="video-grid">
-        
-        <div class="video-card">
-            <iframe src="https://www.txnhh.com/embedframe/otpotbv6420" frameborder="0" allowfullscreen></iframe>
-            <div class="video-info"><h3>DarkX Video 1</h3><p>● LIVE NOW</p></div>
+        <div class="video-grid">
+            
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.txnhh.com/embedframe/otpotbv6420" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DarkX Official Update #1</h3>
+                    <div class="status"><i class="fa fa-circle"></i> Live Now</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.txnhh.com/embedframe/icfuouk4993" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DarkX Official Update #2</h3>
+                    <div class="status"><i class="fa fa-circle"></i> Live Now</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.txnhh.com/embedframe/ifubvohecdd" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DarkX Official Update #3</h3>
+                    <div class="status"><i class="fa fa-circle"></i> Live Now</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.txnhh.com/embedframe/upefikb2fd0" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DarkX Official Update #4</h3>
+                    <div class="status"><i class="fa fa-circle"></i> Live Now</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.txnhh.com/embedframe/uupeehe974a" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DarkX Official Update #5</h3>
+                    <div class="status"><i class="fa fa-circle"></i> Live Now</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.txnhh.com/embedframe/keflavma797" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DarkX Official Update #6</h3>
+                    <div class="status"><i class="fa fa-circle"></i> Live Now</div>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.txnhh.com/embedframe/kfokfko9ea3" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>DarkX Official Update #7</h3>
+                    <div class="status"><i class="fa fa-circle"></i> Live Now</div>
+                </div>
+            </div>
+
         </div>
-
-        <div class="video-card">
-            <iframe src="https://www.txnhh.com/embedframe/icfuouk4993" frameborder="0" allowfullscreen></iframe>
-            <div class="video-info"><h3>DarkX Video 2</h3><p>● LIVE NOW</p></div>
-        </div>
-
-        <div class="video-card">
-            <iframe src="https://www.txnhh.com/embedframe/ifubvohecdd" frameborder="0" allowfullscreen></iframe>
-            <div class="video-info"><h3>DarkX Video 3</h3><p>● LIVE NOW</p></div>
-        </div>
-
-        <div class="video-card">
-            <iframe src="https://www.txnhh.com/embedframe/upefikb2fd0" frameborder="0" allowfullscreen></iframe>
-            <div class="video-info"><h3>DarkX Video 4</h3><p>● LIVE NOW</p></div>
-        </div>
-
-        <div class="video-card">
-            <iframe src="https://www.txnhh.com/embedframe/uupeehe974a" frameborder="0" allowfullscreen></iframe>
-            <div class="video-info"><h3>DarkX Video 5</h3><p>● LIVE NOW</p></div>
-        </div>
-
-        <div class="video-card">
-            <iframe src="https://www.txnhh.com/embedframe/keflavma797" frameborder="0" allowfullscreen></iframe>
-            <div class="video-info"><h3>DarkX Video 6</h3><p>● LIVE NOW</p></div>
-        </div>
-
-        <div class="video-card">
-            <iframe src="https://www.txnhh.com/embedframe/kfokfko9ea3" frameborder="0" allowfullscreen></iframe>
-            <div class="video-info"><h3>DarkX Video 7</h3><p>● LIVE NOW</p></div>
-        </div>
-
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2026 DarkX Official</p>
+        <p>SYSTEM ONLINE | DEVELOPED BY MRX DEV</p>
+        <p>&copy; 2026 DARKX OFFICIAL REPO OWNER</p>
     </footer>
 
 </body>
