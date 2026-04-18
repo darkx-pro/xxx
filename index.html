@@ -1,59 +1,74 @@
-// ===== DARKX OFFICIAL UPDATED =====
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DarkX Official</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-const videoData = [
-    { title: "Pilau_01", url: "https://www.txnhh.com/embedframe/otpotbv6420" },
-    { title: "Pilau_02", url: "https://www.txnhh.com/embedframe/icfuouk4993" },
-    { title: "Pilau_03", url: "https://www.xnxx.com/embedframe/uoclukd982a" },
-    { title: "Pilau_04", url: "https://www.xnxx.com/embedframe/uooiaaf5471" },
-    { title: "Pilau_05", url: "https://www.xnxx.com/embedframe/uudibutd9ef" },
-    { title: "Pilau_06", url: "https://www.xnxx.com/embedframe/uooictba693" },
-    { title: "Pilau_07", url: "https://www.xnxx.com/embedframe/uteucph48c9" },
-    { title: "Pilau_08", url: "https://www.xnxx.com/embedframe/uivmatmf6a6" },
-    { title: "Pilau_09", url: "https://www.xnxx.com/embedframe/ukipftv02da" }
-];
+<!-- LOGIN SCREEN -->
+<div id="login-overlay">
+    <div class="login-box">
 
-const blockedImg = "media/blocked.jpg";
-const logoImg = "media/logo.png";
+        <img src="media/logo.png" class="main-logo">
 
-function loadVideos(list = videoData) {
-    const grid = document.getElementById("videoGrid");
-    if (!grid) return;
+        <h1>DarkX Official</h1>
+        <p class="sub-text">Premium Streaming Experience</p>
 
-    grid.innerHTML = list.map((video, index) => `
-        <div class="video-card fade-in">
+        <input type="text" id="username" placeholder="Weka username">
 
-            <div class="thumbnail"
-                 onclick="openVideo('${video.url}')"
-                 style="background-image:url('${blockedImg}')">
+        <button onclick="loginUser()">INGIA</button>
 
-                <div class="overlay-dark"></div>
+        <small id="usersCount">Users: 0</small>
 
-                <img src="${logoImg}" class="thumb-logo">
+    </div>
+</div>
 
-                <span class="play-icon">▶</span>
+<!-- HEADER -->
+<header class="top-bar">
 
-                <span class="video-number">#${index + 1}</span>
+    <div class="brand">
+        <img src="media/logo.png">
+        <span>DarkX Official</span>
+    </div>
 
-                <span class="badge18">18+</span>
-            </div>
+    <div class="header-right">
+        <span id="welcomeUser"></span>
+        <button onclick="logoutUser()">Logout</button>
+    </div>
 
-            <div class="card-body">
-                <div class="video-title">${video.title}</div>
+</header>
 
-                <div class="btn-group">
-                    <a href="${video.url}" target="_blank" class="btn btn-watch">WATCH</a>
-                    <a href="${video.url}" target="_blank" class="btn btn-open">OPEN</a>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="hero">
 
-        </div>
-    `).join("");
-}
+    <h2>ULAYANI</h2>
+    <p>Watch unlimited premium videos anytime</p>
 
-function openVideo(url){
-    window.open(url,"_blank","noopener,noreferrer");
-}
+</section>
 
-window.onload = () => {
-    loadVideos();
-};
+<!-- SEARCH -->
+<section class="search-box">
+
+    <input
+        type="text"
+        placeholder="Search video..."
+        onkeyup="searchVideos(this.value)"
+    >
+
+</section>
+
+<!-- VIDEO GRID -->
+<div class="video-grid" id="videoGrid"></div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© 2026 DarkX Official</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
