@@ -3,198 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DarkX Official | Streaming</title>
-    <style>
-        /* Msingi wa Mtindo wa Netflix */
-        body {
-            background-color: #141414;
-            color: #ffffff;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Sehemu ya Juu (Navigation) */
-        header {
-            padding: 20px 4%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-        }
-
-        header h1 {
-            color: #e50914;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-            font-size: 28px;
-        }
-
-        /* Sehemu ya Shujaa (Hero Section) */
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.1), #141414), 
-                        url('https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            padding: 0 4%;
-        }
-
-        .hero-content h2 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        /* Mpangilio wa Video (Grid System) */
-        .main-container {
-            padding: 0 4% 50px 4%;
-            margin-top: -100px;
-        }
-
-        .category-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .video-card {
-            background: #2f2f2f;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .video-card:hover {
-            transform: scale(1.05);
-            z-index: 10;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        .iframe-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-        }
-
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .video-info {
-            padding: 10px;
-        }
-
-        .video-info h3 {
-            font-size: 14px;
-            margin: 0;
-            color: #e5e5e5;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 4%;
-            text-align: center;
-            color: #808080;
-            font-size: 13px;
-            border-top: 2px solid #222;
-        }
-
-        /* Kufanya iwe vizuri kwenye simu */
-        @media (max-width: 600px) {
-            .hero-content h2 { font-size: 30px; }
-            .video-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    <title>DarkX Official | Video Stream</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>DarkX Official</h1>
-    </header>
+    <nav class="navbar">
+        <div class="logo">DARK<span>X</span> OFFICIAL</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Tafuta video...">
+            <button><i class="fa fa-search"></i></button>
+        </div>
+    </nav>
 
     <section class="hero">
-        <div class="hero-content">
-            <h2>Unlimited Movies & Shows</h2>
-            <p>Watch anywhere. Cancel anytime.</p>
-        </div>
+        <h2>Latest Uploads</h2>
+        <p>Tazama video kali na mpya kila siku hapa kwetu.</p>
     </section>
 
-    <div class="main-container">
-        <p class="category-title">Trending Now</p>
-        
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="iframe-container">
-                    <iframe src="https://www.txnhh.com/embedframe/otpotbv6420" allowfullscreen></iframe>
-                </div>
-                <div class="video-info"><h3>DarkX Premiere - Clip 01</h3></div>
-            </div>
-
-            <div class="video-card">
-                <div class="iframe-container">
-                    <iframe src="https://www.txnhh.com/embedframe/icfuouk4993" allowfullscreen></iframe>
-                </div>
-                <div class="video-info"><h3>Trending Sequence - Clip 02</h3></div>
-            </div>
-
-            <div class="video-card">
-                <div class="iframe-container">
-                    <iframe src="https://www.txnhh.com/embedframe/ifubvohecdd" allowfullscreen></iframe>
-                </div>
-                <div class="video-info"><h3>Featured Content - Clip 03</h3></div>
-            </div>
-
-            <div class="video-card">
-                <div class="iframe-container">
-                    <iframe src="https://www.txnhh.com/embedframe/upefikb2fd0" allowfullscreen></iframe>
-                </div>
-                <div class="video-info"><h3>Top Rated - Clip 04</h3></div>
-            </div>
-
-            <div class="video-card">
-                <div class="iframe-container">
-                    <iframe src="https://www.txnhh.com/embedframe/uupeehe974a" allowfullscreen></iframe>
-                </div>
-                <div class="video-info"><h3>New Release - Clip 05</h3></div>
-            </div>
-
-            <div class="video-card">
-                <div class="iframe-container">
-                    <iframe src="https://www.txnhh.com/embedframe/keflavma797" allowfullscreen></iframe>
-                </div>
-                <div class="video-info"><h3>Popular - Clip 06</h3></div>
-            </div>
-
-            <div class="video-card">
-                <div class="iframe-container">
-                    <iframe src="https://www.txnhh.com/embedframe/kfokfko9ea3" allowfullscreen></iframe>
-                </div>
-                <div class="video-info"><h3>DarkX Special - Clip 07</h3></div>
-            </div>
-        </div>
-    </div>
+    <main id="video-container" class="video-grid">
+        </main>
 
     <footer>
-        &copy; 2024 DarkX Official. All rights reserved.
+        <p>&copy; 2026 DarkX Official. All Rights Reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

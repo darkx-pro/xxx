@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505; /* Black kabisa kama DarkX */
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: #111;
+    border-bottom: 2px solid #ff0000; /* Line nyekundu */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ff0000; /* Rangi nyekundu ya X */
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    background: #222;
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    padding: 5px;
+}
+
+.search-bar button {
+    background: transparent;
+    border: none;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    padding: 40px 5%;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://source.unsplash.com/1600x900/?abstract,dark');
+    background-size: cover;
+    border-bottom: 1px solid #222;
+}
+
+.hero h2 {
+    color: #ff0000;
+    text-transform: uppercase;
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+}
+
+.video-card {
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #222;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff0000;
+}
+
+.video-card iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #eee;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+    margin-top: 50px;
+    border-top: 1px solid #222;
+    color: #555;
+}
